@@ -1,7 +1,7 @@
 # GS-YEM-Access
 A script to make Yamaha Expansion Manager software more accessible to blind people
 
-*Author:  Gabriel Schuck & other contributo
+*Author:  Gabriel Schuck
 ## Showcase
 
 Yamaha Music has been developing software in recent years to help with the incredible functionality of its musical instruments, especially keyboards.
