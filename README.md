@@ -36,7 +36,7 @@ If you are not using a screen reader, the sapi voice configured by default will 
 <li>f8: Configure midi input and output</li>
 <li>f9: Set audio output (need to open unprotected pack content in voice editor first)</li>
 <li>f10: Generate CPI or PPI file of imported packs</li>
-ctrl+q: Close the script</li>
+<li>ctrl+q: Close the script</li>
 </ul>
 
 ## Contributing
