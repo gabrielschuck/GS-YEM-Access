@@ -1,0 +1,8 @@
+FILEINSTALL("dolapi.dll",@TEMPDIR&"\dolapi.dll")
+FILEINSTALL("fim.wav",@TEMPDIR&"\fim.wav")
+FILEINSTALL("intro.wav",@TEMPDIR&"\intro.wav")
+FILEINSTALL("jfwapi.dll",@TEMPDIR&"\jfwapi.dll")
+FILEINSTALL("nvdaControllerClient.dll",@TEMPDIR&"\nvdaControllerClient.dll")
+FILEINSTALL("SAAPI32.dll",@TEMPDIR&"\SAAPI32.dll")
+FILEINSTALL("UniversalSpeech.dll",@TEMPDIR&"\UniversalSpeech.dll")
+FILEINSTALL("UniversalSpeech.tlb",@TEMPDIR&"\UniversalSpeech.tlb")
