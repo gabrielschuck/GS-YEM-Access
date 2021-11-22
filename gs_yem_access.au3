@@ -5,6 +5,13 @@
 #include "functions.au3"
 opt("mousecoordmode",2)
 opt("pixelcoordmode",2)
+$processes=processlist(@scriptname)
+for $count=1 to $processes[0][0]
+next
+if $count >2 then
+    msgbox($mb_OK+$MB_ICONEXCLAMATION,"Atention!","Script already running.")
+    exit
+endif
 $handle=winwaitactive("Yamaha Expansion Manager")
 if not @compiled then
     soundplay("intro.wav")
