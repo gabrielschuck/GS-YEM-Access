@@ -12,7 +12,11 @@ else
     soundplay(@tempdir&"\intro.wav")
 endif
 sleep(1000)
-if (_desktop_resolution()<>"1920 x 1080")then
+$screen_resolution=_desktop_resolution()
+if @error then
+    $question=    msgbox($MB_YESNO,"Warning","Couldn't identify the screen resolution. You can continue, but resolution other than recommended (1920 X 1080) may cause the script to not work correctly. Do you wish to continue?")
+    if ($question=7) then exit
+elseif $screen_resolution<>"1920 x 1080" then
     msgbox($mb_systemmodal,"Atention!","To use this script you need full hd resolution (1920 x 1080)")
     exit
 endif
