@@ -15,7 +15,7 @@ For script development, macro languages (such as Autoit and Macro Recorder) were
 
 <ul>
 <li>Yamaha Expansion Manager from version 2.8.1 or higher;</li>
-<li>Screen resolution 1920 X 1080 (Full HD)</li>
+<li>Screen resolution 1920 X 1080 (Full HD) and text scale to 100%</li>
 <li>Latest version of
 <a href="https://www.autoitscript.com/site/autoit/downloads/">autoit </a> installed if you want to run from source code</li>
 </ul>
