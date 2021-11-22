@@ -8,7 +8,8 @@ Yamaha Music has been developing software in recent years to help with the incre
 Unfortunately, these programs are mostly not fully accessible for use by blind people.
 Users in equal conditions to enjoy the same resources face difficulties, as the interface has not been adapted to work perfectly with screen readers (programs that read the displayed information aloud).
 It was with this in mind that the idea was born for an accessibility script for Yamaha Expansion Manager, a free desktop application that allows users to install and manage expansion packs, as well as transfer to compatible digital keyboards.
-Although some interface elements are accessible with nvda object navigation, this ends up making their use not very practical.
+Although some interface elements are accessible with nvda object navigation, this ends up making them impractical to use.
+For script development, macro languages (such as Autoit and Macro Recorder) were chosen so that it can work independently of the currently active screen reader.
 
 ## Requirements
 
@@ -25,7 +26,7 @@ Simply run the file "gs_yem_access.au3".
 When the Yamaha Expansion Manager window is in focus, you will hear a sound and a welcome message from your active screen reader.
 If you are not using a screen reader, the sapi voice configured by default will be used.
 
-##What can I do with this script?
+## What can I do with this script?
 
 <ul>
 <li>create and import packs</li>
@@ -38,7 +39,7 @@ All this and much more is certainly possible in the Voice Editor. We'll still ge
 <li>Audio settings: So you can test an unprotected pack in the software itself before sending it to the keyboard. Very useful to avoid unnecessary formatting in expansion memory</li>
 </ul>
 
-##Usage tips
+## Usage tips
 
 If you are going to use Yamaha Expansion Manager for the first time, you need to import your instrument info file. Generate the instrument info file directly from your keyboard. It will save to pendrive.
 Then, in YEM and with the script activated, use f3 and choose with the arrows the option "import instrument info".
@@ -50,6 +51,7 @@ At the end, press f10 to generate an installation file for the selected packs. T
 Meanwhile, a small sound will be played to indicate that the process is in progress. At the end, an Explorer window will open for you to save the file.
 
 ## Main shortcut keys
+
 <ul>
 <li>f1: Opens the "add Pack" menu</li>
 <li>f2: Opens the "edit pack" menu</li>
