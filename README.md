@@ -11,6 +11,7 @@ It was with this in mind that the idea was born for an accessibility script for 
 Although some interface elements are accessible with nvda object navigation, this ends up making their use not very practical.
 
 ## Requirements
+
 <ul>
 <li>Yamaha Expansion Manager from version 2.8.1 or higher;</li>
 <li>Screen resolution 1920 X 1080 (Full HD)</li>
@@ -23,6 +24,30 @@ Although some interface elements are accessible with nvda object navigation, thi
 Simply run the file "gs_yem_access.au3".
 When the Yamaha Expansion Manager window is in focus, you will hear a sound and a welcome message from your active screen reader.
 If you are not using a screen reader, the sapi voice configured by default will be used.
+
+##What can I do with this script?
+
+<ul>
+<li>create and import packs</li>
+<li>edit pack, where you can export, change LSB bank, rename, change image, etc. I plan to make available little extra hotkey driven utilities that will automatically switch from LSB to packs that require it, like those from <a href="https://prostylemusic.net/">Pro Style Music
+</a>. This operation is very difficult for a blind person to do</li>
+<li>ADD Content: Compatible sample files. I've been using soundfonts a lot, including creating my own with the help of programs like <a href="https://samplerobot.com/">SampleRobot</a> which is minimally accessible. After saving and generating the CPI of the created pack, you can install it on the keyboard and improve the voice a little, with Release and Reverb parameters.
+All this and much more is certainly possible in the Voice Editor. We'll still get there at some point</li>
+<li>edit content: Program change, export content as pack, etc</li>
+<li>Midi settings: For sending midi data via keyboard</li>
+<li>Audio settings: So you can test an unprotected pack in the software itself before sending it to the keyboard. Very useful to avoid unnecessary formatting in expansion memory</li>
+</ul>
+
+##Usage tips
+
+If you are going to use Yamaha Expansion Manager for the first time, you need to import your instrument info file. Generate the instrument info file directly from your keyboard. It will save to pendrive.
+Then, in YEM and with the script activated, use f3 and choose with the arrows the option "import instrument info".
+NVDA users can check the imported instrument name using object navigation (nvda+shift+right and left arrow keys for laptop keyboard layout). It is after an unlabeled checkbox.
+Done! Now you can start importing the desired packs.
+Use the f1 key and choose "import pack".
+You can import as many packs as you like, as long as you respect your keyboard's expansion memory limit.
+At the end, press f10 to generate an installation file for the selected packs. The process may take a while, please be patient.
+Meanwhile, a small sound will be played to indicate that the process is in progress. At the end, an Explorer window will open for you to save the file.
 
 ## Main shortcut keys
 <ul>
