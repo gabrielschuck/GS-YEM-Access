@@ -1,3 +1,4 @@
+;Script that returns the screen resolution configured in the system.
 func _desktop_resolution()
 $resolution=""
     switch $resolution=""

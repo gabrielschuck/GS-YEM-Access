@@ -1,3 +1,4 @@
+;Simple autoit wrapper for UniversalSpeech library
 func speech ($text="",$interrupt=false)
     if (not @compiled) then
         $dll = dllopen("universalspeech.dll")

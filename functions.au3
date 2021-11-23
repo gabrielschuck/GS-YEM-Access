@@ -1,17 +1,23 @@
+;Main script functions (functions.au3 file)
+;Author:  Gabriel Schuck
+
+;Place the mouse and click where the "Add pack" menu appears
 func menu1()
-    find_window()
+    find_window() ;If not, puts the program window into focus
     mainscreen()
     mouseclick("left",395,22)
     speech("Add pack: Use arrow keys to navigate")
 endfunc
 
+    ;Place the mouse and click where the "Edit Pack" menu appears
 func menu2()
     find_window()
-    mainscreen()
+    mainscreen() ;If another screen is appearing in the software, try to go back to the main screen
     mouseclick("left",419,22)
     speech("Edit pack:  Use arrow keys to navigate")
 endfunc
 
+    ;Place the mouse and click where the "Add Install Target" menu appears
 func menu3()
     find_window()
     mainscreen()
@@ -19,9 +25,11 @@ func menu3()
     speech("Add install target: Use arrow keys to navigate")
 endfunc
 
+    ;Place the mouse and click where the "Add Content" menu appears
 func menu4()
     find_window()
     mainscreen()
+    ;Verify if there is any open pack or if the pack is not protected by color checking
     $color=pixelgetcolor(394,570,$handle)
 if ($color=16053492)then
         speech("Please create a new pack first or import an unprotected pack")
@@ -33,9 +41,11 @@ if ($color=16053492)then
     endif
 endfunc
 
+    ;Place the mouse and click where the "Edit Content" menu appears
 func menu5()
     find_window()
     mainscreen()
+    ;Check if the open pack is not of the protected type. If so, the menu cannot be opened
     $color=pixelgetcolor(418,570,$handle)
     if ($color=16053492)then
         speech("Couldn't open the menu. Check if you imported an unprotected pack and/or create a new pack and try again")
@@ -45,6 +55,7 @@ func menu5()
     endif
 endfunc
 
+    ;Place the mouse and click where the "Midi Settings" menu appears
 func midi_settings()
     find_window()
     mainscreen()
@@ -52,20 +63,26 @@ func midi_settings()
     speech("Midi settings:  use tab to navigate")
 endfunc
 
+;Try to focus the list of imported packs. Once focused, you can move around the table with the up, down, right and left arrows.
+;Unfortunately, nothing is reported by the screen reader. The solution is to delete the item with the delete key to read the message with NVDA object navigation to know what it is about
 func packs_list()
     find_window()
     mainscreen()
     mousemove(1056,294)
+    mouseclick(1056,294,3)
     speech("Packs list: Table with rows and columns")
 endfunc
 
+;Try to focus the list of pack contents. Once focused, you can move around the table with the up, down, right and left arrows.
+;Unfortunately, nothing is reported by the screen reader. The solution is to delete the item with the delete key to read the message with NVDA object navigation to know what it is about
 func contents_list()
     find_window()
     mainscreen()
-    mouseclick("left",1056,804,2)
+    mouseclick("left",1056,804,3)
     speech("Contents list: Table with rows and columns")
 endfunc
 
+;Place the mouse and click In the option to generate the installation file of the selected packs
 func generate_cpi_file()
     find_window()
     mainscreen()
@@ -76,6 +93,7 @@ func generate_cpi_file()
         $color=pixelgetcolor(1663,20,$handle)
         sleep(800)
     wend
+    ;Wait for the save window to appear and keep clicking with the mouse where the "Save as Pack Installation File" button usually appears
     while not winactivate("Save as Pack Installation File")
         soundplay(@windowsdir&"\media\ring10.wav",1)
         sleep (10)
@@ -83,7 +101,7 @@ func generate_cpi_file()
     wend
     speech ("Done. You can now save the file");
 endfunc
-
+;This needs no comments...
 func bie()
     if not @compiled then
         soundplay("fim.wav")
@@ -94,7 +112,7 @@ else
     speech("Bie")
     exit
 endfunc
-
+;Try to move and click the mouse on the option to configure audio output. Useful when creating a pack to test new voices. The voice editor must be open for the option to be found
 func audio_settings()
     $color=pixelgetcolor(1823,17)
     if ($color=16777215)then
@@ -105,7 +123,7 @@ func audio_settings()
     endif
 endfunc
 
-func mainscreen()
+func mainscreen() ;To bring up the main screen whenever necessary
     $color=pixelgetcolor(1887,17,$handle)
     if ($color=16777215)then
         mouseclick("left",1887,17,2)
@@ -119,7 +137,8 @@ func mainscreen()
     return
 endfunc
 
-func find_window()
+
+func find_window() ;Puts the window always in focus
     if not winactivate("Yamaha Expansion Manager")then
         msgbox($mb_systemmodal,"Ooops!","Yamaha Expansion Manager not found. please open the program and try again. script finished")
         exit
