@@ -101,6 +101,7 @@ func generate_cpi_file()
     wend
     speech ("Done. You can now save the file");
 endfunc
+
 ;This needs no comments...
 func bie()
     if not @compiled then
@@ -112,10 +113,10 @@ else
     speech("Bie")
     exit
 endfunc
+
 ;Try to move and click the mouse on the option to configure audio output. Useful when creating a pack to test new voices. The voice editor must be open for the option to be found
 func audio_settings()
-    $color=pixelgetcolor(1823,17)
-    if ($color=16777215)then
+    if not voiceeditor_active() then
         speech("Please open some unprotected pack content in voice editor first")
     else
         mouseclick("left",1823,17)
@@ -142,5 +143,55 @@ func find_window() ;Puts the window always in focus
     if not winactivate("Yamaha Expansion Manager")then
         msgbox($mb_systemmodal,"Ooops!","Yamaha Expansion Manager not found. please open the program and try again. script finished")
         exit
+    endif
+endfunc
+
+;Check if the Voice Editor screen is activated
+func voiceeditor_active()
+    $color=pixelgetcolor(1823,17)
+    if ($color=16777215)then
+        return false
+    else
+        return true
+    endif
+endfunc
+
+;Mouse over the volume control inside the voice editor screen. Value can be adjusted with up and down arrows, page up/down
+func volume()
+    if not voiceeditor_active() then
+        speech ("Please open some pack content in voice editor first")
+    else
+        mouseclick ("left",839,125,1,0)
+        speech ("Volume: Use up and down arrows, page up and page down to adjust")
+    endif
+endfunc
+
+;Mouse over the pan control inside the voice editor screen. Value can be adjusted with up and down arrows, page up/down
+func pan()
+    if not voiceeditor_active() then
+        speech ("Please open some pack content in voice editor first")
+    else
+    mouseclick ("left",839,170,1,0)
+        speech ("Pan: Use up and down arrows, page up and page down to adjust")
+    endif
+endfunc
+
+;Mouse over the "Key on delay" control inside the voice editor screen
+func key_on_delay()
+    if not voiceeditor_active() then
+        speech ("Please open some pack content in voice editor first")
+    else
+        mouseclick ("left",843,391,1,0)
+        speech ("Key on delay: Use up and down arrows, page up and page down to adjust")
+    endif
+endfunc
+
+;Mouse over the tuning control inside the voice editor screen
+func tuning()
+    if not voiceeditor_active() then
+        speech ("Please open some pack content in voice editor first")
+    else
+        mouseclick("left",460,438,1,0)
+        speech ("Tuning: Use up and down arrows, page up and page down to adjust")
     endif
 endfunc
