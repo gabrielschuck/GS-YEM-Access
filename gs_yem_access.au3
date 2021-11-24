@@ -49,5 +49,10 @@ hotkeyset("{f7}",contents_list)
 hotkeyset("{f8}",midi_settings)
 hotkeyset("{f9}",audio_settings)
 hotkeyset("{f10}",generate_cpi_file)
+hotkeyset("^!v",volume)
+hotkeyset("^!p",pan)
+hotkeyset("^!t",tuning)
+hotkeyset("^!k",key_on_delay)
+
 hotkeyset("^q",bie)
 wend
