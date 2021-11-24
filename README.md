@@ -17,16 +17,16 @@ For script development, macro languages (such as Autoit and Macro Recorder) were
 <li>Yamaha Expansion Manager from version 2.8.1 or higher;</li>
 <li>Screen resolution 1920 X 1080 (Full HD) and text scale to 100%</li>
 <li>Latest version of
-<a href="https://www.autoitscript.com/site/autoit/downloads/">autoit </a> installed if you want to run from source code</li>
+<a href="https://www.autoitscript.com/site/autoit/downloads/">autoit </a> installed if you want to run from source code. You can also run an already-compiled version of the script (pre-releases). Visit the Releases section.  </li>
 </ul>
 
 ## How to use?
 
-Simply run the file "gs_yem_access.au3".
+Simply run the file "gs_yem_access.au3" from source code.
 When the Yamaha Expansion Manager window is in focus, you will hear a sound and a welcome message from your active screen reader.
-If you are not using a screen reader, the sapi voice configured by default will be used.
+If you are not using a screen reader, the sapi voice configured by default will be used To speak additional messages.
 
-## What can I do with this script?
+## What can you do with the script so far?
 
 <ul>
 <li>create and import packs</li>
@@ -67,4 +67,13 @@ Meanwhile, a small sound will be played to indicate that the process is in progr
 </ul>
 
 ## Contributing
+
 Any contribution in order to help improve the project is always very welcome!
+
+## Aditional links
+
+<a href="https://www.yamaha.com/">Yamaha Corporation Global </a>
+<br>
+<a href="https://www.manualsdir.com/manuals/848892/yamaha-expansion-manager.html">Yamaha Expansion Manager Online Manual </a>
+<br>
+<a href="https://shop.usa.yamaha.com/downloadables">Yamaha Music Soft </a>
