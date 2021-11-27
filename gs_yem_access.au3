@@ -8,6 +8,10 @@
 #include "functions.au3"
 opt("mousecoordmode",2)
 opt("pixelcoordmode",2)
+;Global variables
+;Two-dimensional array with the tab list of the voice editor's "common" screen, with their respective mouse positions
+global $voiceeditor_commontabs=[["general","portamento details","controllers","sounds","effects","eq"],["568,56","568,85","568,114","568,143","568,172","568,201"]]
+global  $voiceeditor_disabled=true, $active_tab=""
 ;Preventing multiple instances of the script
 $processes=processlist(@scriptname)
 for $count=1 to $processes[0][0]
@@ -49,10 +53,15 @@ hotkeyset("{f7}",contents_list)
 hotkeyset("{f8}",midi_settings)
 hotkeyset("{f9}",audio_settings)
 hotkeyset("{f10}",generate_cpi_file)
+hotkeyset("^q",bie)
 hotkeyset("^!v",volume)
 hotkeyset("^!p",pan)
 hotkeyset("^!t",tuning)
 hotkeyset("^!k",key_on_delay)
-
-hotkeyset("^q",bie)
+hotkeyset("^+g",general)
+hotkeyset("^+p",portamento_details)
+hotkeyset("^+c",controllers)
+hotkeyset("^+s",sounds)
+hotkeyset("^+e",effects)
+hotkeyset("^+q",eq)
 wend
