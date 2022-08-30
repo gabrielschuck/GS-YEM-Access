@@ -54,5 +54,6 @@ while true
     hotkeyset("{f8}",midi_settings)
     hotkeyset("{f9}",audio_settings)
     hotkeyset("{f10}",generate_cpi_file)
+hotkeyset("^i",instrument_information)
     hotkeyset("^q",bie)
 wend
