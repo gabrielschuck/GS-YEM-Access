@@ -91,16 +91,19 @@ func generate_cpi_file()
     $color=0
     while ($color<>15592941)
         $color=pixelgetcolor(1663,20,$handle)
-        sleep(800)
+        beep(700,50)
+        sleep(1000)
     wend
-    ;Wait for the save window to appear and keep clicking with the mouse where the "Save as Pack Installation File" button usually appears
+    speech ("Done. You can now save the file.  Press f10 again");
     while not winactivate("Save as Pack Installation File")
-        soundplay(@windowsdir&"\media\ring10.wav",1)
-        sleep (10)
-        mouseclick("left",1663,20)
+        hotkeyset("{f10}",save)
     wend
-    speech ("Done. You can now save the file");
 endfunc
+
+func save()
+        mouseclick("left",1663,20)
+endfunc
+
 ;This needs no comments...
 func bie()
     if not @compiled then
