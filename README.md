@@ -4,7 +4,7 @@ A script to make Yamaha Expansion Manager software more accessible to blind peop
 *Author:  Gabriel Schuck
 ## Showcase
 
-Yamaha Music has been developing software in recent years to help with the incredible functionality of its musical instruments, especially keyboards.
+Yamaha Music has been developing software in recent years to help with the incredible functionality of its musical instruments, especially arranjer keyboards.
 Unfortunately, these programs are mostly not fully accessible for use by blind people.
 Users in equal conditions to enjoy the same resources face difficulties, as the interface has not been adapted to work perfectly with screen readers (programs that read the displayed information aloud).
 It was with this in mind that the idea was born for an accessibility script for Yamaha Expansion Manager, a free desktop application that allows users to install and manage expansion packs, as well as transfer to compatible digital keyboards.
@@ -14,7 +14,7 @@ For script development, macro languages (such as Autoit and Macro Recorder) were
 ## Requirements
 
 <ul>
-<li>Yamaha Expansion Manager from version 2.8.1 or higher;</li>
+<li>Yamaha Expansion Manager from version 2.8.1 or higher (version 2.6.0 for windows7 not tested);</li>
 <li>Screen resolution 1920 X 1080 (Full HD) and text scale to 100%</li>
 <li>Latest version of
 <a href="https://www.autoitscript.com/site/autoit/downloads/">autoit </a> installed if you want to run from source code. You can also run an already-compiled version of the script (pre-releases). Visit the Releases section.  </li>
@@ -37,18 +37,21 @@ All this and much more is certainly possible in the Voice Editor. We'll still ge
 <li>edit content: Program change, export content as pack, etc</li>
 <li>Midi settings: For sending midi data via keyboard</li>
 <li>Audio settings: So you can test an unprotected pack in the software itself before sending it to the keyboard. Very useful to avoid unnecessary formatting in expansion memory</li>
+<li>know information about the instrument such as model, expansion memory size for voices and audio styles (if any) according to imported n27 file</li>
 </ul>
 
 ## Usage tips
 
 If you are going to use Yamaha Expansion Manager for the first time, you need to import your instrument info file. Generate the instrument info file directly from your keyboard. It will save to pendrive.
 Then, in YEM and with the script activated, use f3 and choose with the arrows the option "import instrument info".
-NVDA users can check the imported instrument name using object navigation (nvda+shift+right and left arrow keys for laptop keyboard layout). It is after an unlabeled checkbox.
+Once that's done, check if everything went well with the control+i shortcut.
+You will hear instrument information such as the model and size of the expansion memory for voices and audio styles.
+
 Done! Now you can start importing the desired packs.
 Use the f1 key and choose "import pack".
 You can import as many packs as you like, as long as you respect your keyboard's expansion memory limit.
 At the end, press f10 to generate an installation file for the selected packs. The process may take a while, please be patient.
-Meanwhile, a small sound will be played to indicate that the process is in progress. At the end, an Explorer window will open for you to save the file.
+Meanwhile, a beep sound will be played to indicate that the process is in progress. At the end, press f10 again to save the file.
 
 ## Main shortcut keys
 
@@ -63,6 +66,7 @@ Meanwhile, a small sound will be played to indicate that the process is in progr
 <li>f8: Configure midi input and output</li>
 <li>f9: Set audio output (need to open unprotected pack content in voice editor first)</li>
 <li>f10: Generate CPI or PPI file of imported packs</li>
+<li>control+i:  Know instrument information according to imported n27 file
 <li>ctrl+q: Close the script</li>
 </ul>
 
