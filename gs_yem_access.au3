@@ -8,6 +8,8 @@
 #include "functions.au3"
 opt("mousecoordmode",2)
 opt("pixelcoordmode",2)
+;Global variables
+$instruments_ini=@localappdatadir&"\yamaha\expansion manager\instruments.ini"
 ;Preventing multiple instances of the script
 $processes=processlist(@scriptname)
 for $count=1 to $processes[0][0]
@@ -37,17 +39,20 @@ elseif $screen_resolution<>"1920 x 1080" then
 endif
 ;No more checks. Let's go
 speech("Gs yem access. Welcome! Script created by Gabriel Schuck")
+if not fileexists($instruments_ini) and winactivate($handle) then
+    msgbox($mb_systemmodal,"Warning","You need to import your instrument info file. Press f3 in the Yamaha Expansion Manager window to do this")
+endif
 ;List of allowed shortcut keys
 while true
-hotkeyset("{f1}",menu1)
-hotkeyset("{f2}",menu2)
-hotkeyset("{f3}",menu3)
-hotkeyset("{f4}",menu4)
-hotkeyset("{f5}",menu5)
-hotkeyset("{f6}",packs_list)
-hotkeyset("{f7}",contents_list)
-hotkeyset("{f8}",midi_settings)
-hotkeyset("{f9}",audio_settings)
-hotkeyset("{f10}",generate_cpi_file)
-hotkeyset("^q",bie)
+    hotkeyset("{f1}",menu1)
+    hotkeyset("{f2}",menu2)
+    hotkeyset("{f3}",menu3)
+    hotkeyset("{f4}",menu4)
+    hotkeyset("{f5}",menu5)
+    hotkeyset("{f6}",packs_list)
+    hotkeyset("{f7}",contents_list)
+    hotkeyset("{f8}",midi_settings)
+    hotkeyset("{f9}",audio_settings)
+    hotkeyset("{f10}",generate_cpi_file)
+    hotkeyset("^q",bie)
 wend
