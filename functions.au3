@@ -147,3 +147,20 @@ func find_window() ;Puts the window always in focus
         exit
     endif
 endfunc
+
+;Tells instrument information such as model, expansion memory size for voices and audio styles (if any)
+func instrument_information()
+if not fileexists($instruments_ini) and winactivate($handle) then
+    msgbox($mb_systemmodal,"Warning","You need to import your instrument info file. Press f3 in the Yamaha Expansion Manager window to do this")
+else
+    $filehandle=fileopen($instruments_ini)
+    $section=stringreplace(stringreplace(filereadline($filehandle,1),"[","",0),"]","",0)
+    fileclose($filehandle)
+    $instrument_name="Yamaha "&stringlower(iniread($instruments_ini,$section,"modelname",""))
+    $voice_wave_rom_size=iniread($instruments_ini,$section,"voicewaveromsize","")
+    $audio_style_wave_rom_size=iniread($instruments_ini,$section,"audiostylewaveromsize","")
+    speech("instrument name:  "&$instrument_name&".")
+    speech("Expansion memory size for voices:  "&$voice_wave_rom_size&" MB")
+    if $audio_style_wave_rom_size>0 then speech("Expansion memory size for audio styles:  "&$audio_style_wave_rom_size&" MB.")
+endif
+endfunc
