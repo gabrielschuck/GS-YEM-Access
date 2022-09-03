@@ -83,21 +83,26 @@ func contents_list()
 endfunc
 
 ;Place the mouse and click In the option to generate the installation file of the selected packs
-func generate_cpi_file()
+func generate_instalation_file()
     find_window()
     mainscreen()
     mouseclick("left",91,125)
-    speech("Generating pack instalation file, please wait...")
-    $color=0
-    while ($color<>15592941)
-        $color=pixelgetcolor(1663,20,$handle)
-        beep(700,50)
-        sleep(1000)
+    $color=pixelgetcolor(91,125,$handle)
+    if $color=14013909 then ;No pack imported or user has not yet imported n27 file
+        speech ("No imported packs or your instrument N27 file was not loaded")
+    else
+        speech("Generating pack instalation file, please wait...")
+        $color=0
+        while ($color<>15592941)
+            $color=pixelgetcolor(1663,20,$handle)
+            beep(700,50)
+            sleep(1000)
     wend
-    speech ("Done. You can now save the file.  Press f10 again");
-    while not winactivate("Save as Pack Installation File")
-        hotkeyset("{f10}",save)
+        speech ("Done. You can now save the file.  Press f10 again");
+        while not winactivate("Save as Pack Installation File")
+            hotkeyset("{f10}",save)
     wend
+    endif
 endfunc
 
 func save()
