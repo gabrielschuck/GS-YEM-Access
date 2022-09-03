@@ -53,7 +53,7 @@ while true
     hotkeyset("{f7}",contents_list)
     hotkeyset("{f8}",midi_settings)
     hotkeyset("{f9}",audio_settings)
-    hotkeyset("{f10}",generate_cpi_file)
+    hotkeyset("{f10}",generate_instalation_file)
 hotkeyset("^i",instrument_information)
     hotkeyset("^q",bie)
 wend
